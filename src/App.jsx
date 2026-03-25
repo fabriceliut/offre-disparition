@@ -76,7 +76,7 @@ export default function App() {
   }, []);
 
   const colors = {
-    primary: '#7667FF',
+    primary: '#7568FF',
     secondary: '#FF6B6B',
   };
 
@@ -100,7 +100,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0F0F11] text-gray-200 font-sans overflow-hidden relative">
+    <div className="min-h-screen bg-[#0B0C0E] text-[#EEEEF0] font-sans overflow-hidden relative">
 
       {/* --- Animated Background Blobs --- */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
@@ -116,8 +116,8 @@ export default function App() {
       <nav
         className={`fixed w-full z-50 transition-all duration-500 border-b ${
           scrolled
-            ? 'bg-[#0F0F11]/95 backdrop-blur-xl border-white/10 py-3 shadow-lg'
-            : 'bg-[#0F0F11]/60 backdrop-blur-md border-white/5 py-5'
+            ? 'bg-[#0B0C0E]/95 backdrop-blur-xl border-white/10 py-3 shadow-lg'
+            : 'bg-[#0B0C0E]/60 backdrop-blur-md border-white/5 py-5'
         }`}
       >
         <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
@@ -125,29 +125,30 @@ export default function App() {
             className="text-2xl font-bold tracking-tighter text-white z-50 relative group cursor-pointer"
             onClick={() => window.scrollTo(0, 0)}
           >
-            LIUT<span className="group-hover:text-white transition-colors duration-300" style={{ color: colors.primary }}>.ME</span>
+            Liut<span className="group-hover:text-white transition-colors duration-300" style={{ color: colors.primary }}>.</span>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-10 text-sm font-semibold tracking-wide text-gray-300">
+          <div className="hidden md:flex items-center gap-8 bg-[#141518]/70 px-6 py-2.5 rounded-full border border-[#2E3138]/50 backdrop-blur-sm text-[13px] font-medium text-[#8A8F98]">
             {navItems.map((item) => (
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.id)}
-                className="hover:text-white transition-all relative py-1 group cursor-pointer"
+                className="hover:text-[#EEEEF0] transition-all relative py-1 group cursor-pointer"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#7667FF] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#7568FF] transition-all duration-300 group-hover:w-full" />
               </button>
             ))}
           </div>
 
           <div className="flex items-center gap-4">
             <button
-              className="hidden md:block px-5 py-2 text-xs font-bold uppercase tracking-wider border border-white/20 rounded hover:bg-white hover:text-black transition-all cursor-pointer"
+              className="hidden md:inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-[13px] font-medium bg-[#7568FF] border border-[#7568FF] text-white hover:bg-[#6457E5] shadow-[0_0_20px_-5px_rgba(117,104,255,0.4)] transition-all cursor-pointer"
               onClick={openBooking}
             >
-              Contact
+              Prendre 45 min
+              <ArrowRight size={14} className="opacity-80" />
             </button>
             <button className="md:hidden text-white z-50 cursor-pointer" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {isMenuOpen ? <XIcon /> : <MenuIcon />}
@@ -157,7 +158,7 @@ export default function App() {
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden fixed inset-0 bg-black z-40 flex flex-col items-center justify-center space-y-8 transition-transform duration-500 ${
+          className={`md:hidden fixed inset-0 bg-[#0B0C0E]/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center space-y-8 transition-transform duration-500 ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
@@ -165,16 +166,16 @@ export default function App() {
             <button
               key={item.label}
               onClick={() => scrollToSection(item.id)}
-              className="text-3xl font-bold text-white hover:text-[#7667FF] transition-colors cursor-pointer"
+              className="text-3xl font-bold text-white hover:text-[#7568FF] transition-colors cursor-pointer"
             >
               {item.label}
             </button>
           ))}
           <button
             onClick={openBooking}
-            className="mt-8 px-8 py-3 bg-[#7667FF] text-white rounded font-bold cursor-pointer"
+            className="mt-8 px-8 py-3 bg-[#7568FF] text-white rounded-full font-medium cursor-pointer"
           >
-            Prendre RDV
+            Prendre 45 min
           </button>
         </div>
       </nav>
@@ -182,12 +183,12 @@ export default function App() {
       {/* --- Hero Section --- */}
       <section className="relative pt-48 pb-32 px-6 max-w-5xl mx-auto text-center md:text-left z-10">
         <Reveal>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1A1A1E] border border-white/10 text-xs font-bold text-[#7667FF] mb-8 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#7568FF]/30 bg-[#7568FF]/5 text-[11px] font-mono uppercase tracking-wider text-[#7568FF] mb-8 backdrop-blur-sm">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#7667FF] opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#7667FF]" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#7568FF] opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#7568FF]" />
             </span>
-            PROGRAMME D&apos;AUTONOMIE
+            PROGRAMME AUTONOMIE & SÉCURITÉ
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-8 tracking-tight">
@@ -207,16 +208,16 @@ export default function App() {
             ...
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-300 font-normal mb-12 max-w-2xl leading-relaxed">
+          <p className="text-xl md:text-2xl text-[#8A8F98] font-normal mb-12 max-w-2xl leading-relaxed">
             Sans prévenir. Sans téléphone. Sans emails.
             <br />
-            Quel serait l&apos;impact <span className="text-white font-medium border-b border-white/30">réel</span> sur votre industrie ?
+            Quel serait l&apos;impact <span className="text-[#EEEEF0] font-medium border-b border-white/30">réel</span> sur votre entreprise ?
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 items-start justify-center md:justify-start">
             <button
               onClick={openBooking}
-              className="group relative px-8 py-4 bg-[#7667FF] text-white font-bold text-lg rounded-xl overflow-hidden shadow-[0_0_30px_-10px_#7667FF] transition-all hover:scale-105 hover:shadow-[0_0_50px_-10px_#7667FF] cursor-pointer"
+              className="group relative px-8 py-4 bg-[#7568FF] text-white font-bold text-lg rounded-xl overflow-hidden shadow-[0_0_30px_-10px_#7568FF] transition-all hover:scale-105 hover:shadow-[0_0_50px_-10px_#7568FF] cursor-pointer"
             >
               <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
               <span className="flex items-center gap-3">
@@ -224,54 +225,65 @@ export default function App() {
               </span>
             </button>
           </div>
+          <button
+            onClick={() => scrollToSection('methode')}
+            className="mt-4 text-[13px] text-[#8A8F98] hover:text-[#EEEEF0] underline decoration-[#2E3138] hover:decoration-[#EEEEF0] underline-offset-4 transition-all cursor-pointer"
+          >
+            Pas sûr(e) ? Lisez d&apos;abord comment ça marche.
+          </button>
         </Reveal>
       </section>
 
       {/* --- Le Diagnostic --- */}
-      <section id="constat" className="py-32 px-6 relative z-10">
+      <section id="constat" className="py-32 px-6 relative z-10 border-t border-[#2E3138]">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
           <Reveal>
+            <div className="mb-4">
+              <span className="text-[#7568FF] font-mono text-[11px] uppercase tracking-wider mb-4 block">/// Constat</span>
+            </div>
             <h2 className="text-4xl font-bold text-white mb-8">
-              Le symptôme de <br />
-              <span className="text-[#9CA3AF]">l&apos;indispensable</span>
+              Tout repose <br />
+              <span className="text-[#8A8F98]">sur vous.</span>
             </h2>
-            <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
+            <div className="space-y-6 text-[17px] text-[#8A8F98] leading-relaxed">
               <p>
                 La réponse est souvent brutale :{' '}
-                <span className="text-white font-semibold bg-white/10 px-2 py-1 rounded border border-white/5 shadow-inner">
-                  &quot;Ce serait la crise. Tout risque de s&apos;effondrer.&quot;
+                <span className="text-[#EEEEF0] font-semibold bg-white/10 px-2 py-1 rounded border border-white/5 shadow-inner">
+                  &quot;Sans moi, ça s&apos;arrête.&quot;
                 </span>
               </p>
               <p>
-                C&apos;est un risque majeur pour la pérennité de votre entreprise (valorisation en baisse) et un risque
-                personnel pour vous (charge mentale explosive).
+                Votre organisation repose trop sur vous. Chaque décision passe par vous, vos équipes attendent votre feu vert, et votre agenda est rempli de réunions opérationnelles.
+              </p>
+              <p>
+                C&apos;est un risque majeur pour la pérennité de votre entreprise — et un épuisement personnel que vous connaissez trop bien.
               </p>
             </div>
-            <div className="mt-10 p-6 border-l-4 bg-gradient-to-r from-[#7667FF]/10 to-transparent backdrop-blur-md rounded-r-xl border-[#7667FF]">
+            <div className="mt-10 p-6 border-l-4 bg-gradient-to-r from-[#7568FF]/10 to-transparent backdrop-blur-md rounded-r-xl border-[#7568FF]">
               <p className="text-white italic text-lg font-medium">
-                &quot;Votre rôle est d&apos;apporter la vision, la stratégie et de gérer les relations clés. Pas de faire
-                tourner la boutique au quotidien.&quot;
+                &quot;Votre rôle, c&apos;est la vision et la stratégie. Pas de faire tourner la boutique au quotidien.&quot;
               </p>
             </div>
           </Reveal>
 
           <Reveal delay={200}>
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#FF6B6B] to-[#7667FF] rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
-              <div className="bg-[#151518] p-8 rounded-2xl border border-white/10 relative z-10 backdrop-blur-xl shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FF6B6B] to-[#7568FF] rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
+              <div className="bg-[#141518] p-8 rounded-2xl border border-[#2E3138] relative z-10 backdrop-blur-xl shadow-2xl">
                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
                   <div className="p-2 rounded-lg bg-[#FF6B6B]/20 text-[#FF6B6B]">
                     <AlertTriangle size={24} />
                   </div>
-                  Les Risques Actuels
+                  Vous reconnaissez-vous ?
                 </h3>
                 <ul className="space-y-6">
                   {[
-                    "Goulot d'étranglement décisionnel",
-                    "Équipes déresponsabilisées ('J'attends le chef')",
-                    "Valorisation de l'entreprise affaiblie",
+                    "Vous êtes sur le chemin critique de chaque décision",
+                    "Vos équipes attendent votre validation pour avancer",
+                    "Votre absence de 2 jours crée déjà du retard",
+                    "Votre entreprise vaut moins sans vous dedans",
                   ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-4 text-gray-200 font-medium">
+                    <li key={i} className="flex items-center gap-4 text-[#EEEEF0] font-medium">
                       <span className="w-2 h-2 rounded-full shadow-[0_0_10px_#FF6B6B]" style={{ backgroundColor: colors.secondary }} />
                       {item}
                     </li>
@@ -284,47 +296,48 @@ export default function App() {
       </section>
 
       {/* --- La Méthode --- */}
-      <section id="methode" className="py-32 px-6 relative z-10 bg-[#0F0F11]/50">
+      <section id="methode" className="py-32 px-6 relative z-10 border-t border-[#2E3138]">
         <div className="max-w-4xl mx-auto text-center mb-24">
           <Reveal>
+            <span className="text-[#7568FF] font-mono text-[11px] uppercase tracking-wider mb-4 block">/// Méthode</span>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">La Disparition Progressive</h2>
-            <p className="text-gray-300 text-lg">
+            <p className="text-[#8A8F98] text-lg">
               On ne change pas une culture en un jour.
-              <br /> Nous simulons votre absence, graduellement, pour{' '}
-              <span className="text-white underline decoration-[#7667FF] decoration-2 underline-offset-4">
+              <br /> On simule votre absence, graduellement, pour{' '}
+              <span className="text-[#EEEEF0] underline decoration-[#7568FF] decoration-2 underline-offset-4">
                 corriger en temps réel
               </span>
-              .
+              . Pas de grand plan théorique — du terrain.
             </p>
           </Reveal>
         </div>
 
         <div className="max-w-5xl mx-auto relative">
-          <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-[2px] bg-gradient-to-b from-[#7667FF] via-[#FF6B6B] to-[#7667FF] opacity-40" />
+          <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-[2px] bg-gradient-to-b from-[#7568FF] via-[#FF6B6B] to-[#7568FF] opacity-40" />
 
           <div className="space-y-20">
             {[
               {
                 title: 'Le Micro-Test',
                 time: '3h → 1 jour',
-                desc: 'On observe les premiers réflexes : qui vous appelle ? Pourquoi ?',
-                obj: 'Identifier les interruptions non critiques.',
+                desc: 'On observe les premiers réflexes : qui vous appelle ? Pourquoi ? Quelles décisions restent bloquées sans vous ?',
+                obj: 'Identifier les dépendances non critiques.',
                 color: colors.primary,
                 icon: <Clock size={20} />,
               },
               {
                 title: "L'Absence Courte",
                 time: '2 jours → 4 jours',
-                desc: "C'est là que les processus manquants apparaissent. On corrige immédiatement.",
-                obj: 'Délégations opérationnelles & Accès info.',
+                desc: "C'est là que les processus manquants apparaissent. On corrige immédiatement avec vos équipes, pas pour elles.",
+                obj: 'Délégations opérationnelles & flux autonomes.',
                 color: '#A78BFA',
                 icon: <Zap size={20} />,
               },
               {
                 title: 'Le Crash Test',
                 time: '1 → 2 semaines',
-                desc: "Sans contact. Votre équipe doit gérer seule. C'est l'objectif final.",
-                obj: 'Autonomie totale & Sécurité.',
+                desc: "Sans contact. Votre équipe gère seule. C'est l'objectif final — votre entreprise tourne sans vous.",
+                obj: 'Autonomie totale & sécurisation.',
                 color: colors.secondary,
                 icon: <Shield size={20} />,
               },
@@ -332,23 +345,23 @@ export default function App() {
               <Reveal key={index}>
                 <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 relative pl-12 md:pl-0">
                   <div
-                    className="absolute left-[-5px] md:left-1/2 top-0 md:top-1/2 transform md:-translate-x-1/2 md:-translate-y-1/2 w-6 h-6 rounded-full border-4 border-[#0F0F11] z-20 shadow-[0_0_15px_rgba(0,0,0,0.5)]"
+                    className="absolute left-[-5px] md:left-1/2 top-0 md:top-1/2 transform md:-translate-x-1/2 md:-translate-y-1/2 w-6 h-6 rounded-full border-4 border-[#0B0C0E] z-20 shadow-[0_0_15px_rgba(0,0,0,0.5)]"
                     style={{ backgroundColor: step.color }}
                   />
 
                   <div className={`md:w-5/12 ${index % 2 === 0 ? 'md:text-right md:order-1' : 'md:order-3 text-left'}`}>
                     <h3 className="text-2xl font-bold text-white mb-2">{step.title}</h3>
-                    <p className="text-[#7667FF] font-mono text-sm mb-3 tracking-wider uppercase font-bold">{step.time}</p>
-                    <p className="text-gray-300">{step.desc}</p>
+                    <p className="text-[#7568FF] font-mono text-sm mb-3 tracking-wider uppercase font-bold">{step.time}</p>
+                    <p className="text-[#8A8F98]">{step.desc}</p>
                   </div>
 
                   <div className={`md:w-5/12 ${index % 2 === 0 ? 'md:order-3' : 'md:order-1'} w-full`}>
-                    <div className="bg-[#1A1A1E] p-6 rounded-xl border border-white/10 shadow-lg hover:border-white/20 transition-colors group">
+                    <div className="bg-[#141518] p-6 rounded-xl border border-[#2E3138] shadow-lg hover:border-[#3E4149] transition-colors group">
                       <div className="flex items-center gap-3 mb-3">
-                        <div className="p-2 rounded bg-white/5 text-gray-300 group-hover:text-white group-hover:scale-110 transition-all">
+                        <div className="p-2 rounded bg-[#7568FF]/10 text-[#7568FF] group-hover:scale-110 transition-all">
                           {step.icon}
                         </div>
-                        <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Objectif</span>
+                        <span className="text-xs font-bold uppercase tracking-widest text-[#8A8F98]">Objectif</span>
                       </div>
                       <p className="text-white font-medium">{step.obj}</p>
                     </div>
@@ -359,14 +372,13 @@ export default function App() {
           </div>
 
           <Reveal delay={300}>
-            <div className="mt-24 p-8 rounded-2xl text-center border border-white/10 bg-gradient-to-b from-white/5 to-transparent backdrop-blur-md relative overflow-hidden">
+            <div className="mt-24 p-8 rounded-2xl text-center border border-[#2E3138] bg-gradient-to-b from-white/5 to-transparent backdrop-blur-md relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-              <p className="text-gray-300 relative z-10 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-[#8A8F98] relative z-10 max-w-2xl mx-auto leading-relaxed">
                 <span className="block text-[#FF6B6B] font-bold mb-2 flex items-center justify-center gap-2">
-                  <AlertTriangle size={18} /> Note Importante
+                  <AlertTriangle size={18} /> Note importante
                 </span>
-                Pendant vos absences, vous n&apos;êtes pas en vacances. Nous travaillons en &quot;back-office&quot; pour ajuster
-                votre posture, gérer le stress du lâcher-prise et préparer la restructuration.
+                Pendant vos absences, vous n&apos;êtes pas en vacances. On travaille en back-office pour ajuster votre posture, structurer la délégation et préparer le terrain. C&apos;est du Design Organisationnel appliqué — pas du coaching de surface.
               </p>
             </div>
           </Reveal>
@@ -374,9 +386,10 @@ export default function App() {
       </section>
 
       {/* --- Cas Concrets --- */}
-      <section className="py-32 px-6 relative z-10">
+      <section className="py-32 px-6 relative z-10 border-t border-[#2E3138]">
         <div className="max-w-6xl mx-auto">
           <Reveal>
+            <span className="text-[#7568FF] font-mono text-[11px] uppercase tracking-wider mb-4 block text-center">/// Terrain</span>
             <h2 className="text-4xl font-bold text-white mb-16 text-center">Avant / Après</h2>
           </Reveal>
 
@@ -384,36 +397,36 @@ export default function App() {
             {[
               {
                 icon: <TrendingUp size={28} />,
-                title: 'PMI Métallurgie',
-                context: '45 salariés, flux tendu',
-                before: 'Le dirigeant validait chaque changement de planning.',
-                after: "Mise en place d'un pilotage visuel autonome. Les chefs d'équipe ont désormais l'autorité maintenance.",
+                title: 'PME Industrielle',
+                context: '45 salariés — production en flux tendu',
+                before: 'Le dirigeant validait chaque changement de planning. Toute absence créait des retards en chaîne.',
+                after: "Pilotage visuel autonome. Les chefs d'équipe prennent des décisions terrain sans remonter au dirigeant.",
               },
               {
                 icon: <Users size={28} />,
-                title: 'PMI Ingénierie',
-                context: '20 ingénieurs, projets sur-mesure',
-                before: 'Dirigeant seul point de contact crédible pour les clients.',
-                after: "Binôme Lead Tech/Chargé d'Affaires. Le silence du dirigeant a forcé la confiance client.",
+                title: 'Agence de services',
+                context: '18 collaborateurs — projets sur-mesure',
+                before: 'La dirigeante était le seul point de contact crédible pour les clients. Impossible de prendre du recul.',
+                after: "Binôme Lead/Chargé d'affaires formé. Le silence de la dirigeante a forcé la confiance client envers l'équipe.",
               },
             ].map((card, i) => (
               <Reveal key={i} delay={i * 200}>
-                <div className="group bg-[#151518] border border-white/10 p-8 rounded-2xl hover:border-[#7667FF]/30 transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-[#7667FF]/10 h-full flex flex-col">
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#7667FF] to-[#5a4ddb] text-white flex items-center justify-center rounded-xl mb-6 shadow-lg shadow-[#7667FF]/20 group-hover:scale-110 transition-transform duration-300">
+                <div className="group bg-[#141518] border border-[#2E3138] p-8 rounded-2xl hover:border-[#7568FF]/30 transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-[#7568FF]/10 h-full flex flex-col">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#7568FF] to-[#5a4ddb] text-white flex items-center justify-center rounded-xl mb-6 shadow-lg shadow-[#7568FF]/20 group-hover:scale-110 transition-transform duration-300">
                     {card.icon}
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-2">{card.title}</h3>
-                  <p className="text-gray-400 text-sm mb-8 font-mono">{card.context}</p>
+                  <p className="text-[#8A8F98] text-sm mb-8 font-mono">{card.context}</p>
 
                   <div className="space-y-5 mt-auto">
                     <div className="pl-4 border-l-2 border-[#FF6B6B]/40">
-                      <p className="text-gray-300 text-sm leading-relaxed">
+                      <p className="text-[#8A8F98] text-sm leading-relaxed">
                         <span className="text-[#FF6B6B] font-bold text-xs uppercase block mb-1">Avant</span> {card.before}
                       </p>
                     </div>
-                    <div className="pl-4 border-l-2 border-[#7667FF]/60">
-                      <p className="text-gray-100 text-sm leading-relaxed">
-                        <span className="text-[#7667FF] font-bold text-xs uppercase block mb-1">Maintenant</span> {card.after}
+                    <div className="pl-4 border-l-2 border-[#7568FF]/60">
+                      <p className="text-[#EEEEF0] text-sm leading-relaxed">
+                        <span className="text-[#7568FF] font-bold text-xs uppercase block mb-1">Maintenant</span> {card.after}
                       </p>
                     </div>
                   </div>
@@ -425,36 +438,37 @@ export default function App() {
       </section>
 
       {/* --- Témoignages --- */}
-      <section id="temoignages" className="py-32 px-6 bg-[#0F0F11] relative border-t border-white/5">
+      <section id="temoignages" className="py-32 px-6 relative border-t border-[#2E3138]">
         <div className="max-w-6xl mx-auto">
           <Reveal>
+            <span className="text-[#7568FF] font-mono text-[11px] uppercase tracking-wider mb-4 block">/// Vécu</span>
             <h2 className="text-4xl font-bold text-white mb-16">Vécu par vos pairs</h2>
           </Reveal>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                text: "Au retour, non seulement l'usine n'avait pas brûlé, mais mon responsable prod avait pris une initiative que je n'aurais jamais osé prendre.",
+                text: "Au retour, non seulement l'entreprise n'avait pas brûlé, mais mon responsable avait pris une initiative que je n'aurais jamais osé prendre.",
                 author: 'Marc D.',
-                role: 'Automobile',
+                role: 'PME industrielle — 45 salariés',
               },
               {
-                text: "J'ai réalisé que j'étais le bouchon de ma propre entreprise. Aujourd'hui, je travaille 2 fois moins sur l'opérationnel.",
+                text: "J'ai réalisé que j'étais le bouchon de ma propre boîte. Aujourd'hui, je travaille 2 fois moins sur l'opérationnel. Mon agenda a changé de visage.",
                 author: 'Sophie L.',
-                role: 'Plasturgie',
+                role: 'Agence — 22 collaborateurs',
               },
               {
-                text: "Ce n'est pas juste de la délégation, c'est de la sécurisation d'actif. Je dors beaucoup mieux.",
+                text: "Ce n'est pas juste de la délégation. C'est de la sécurisation d'actif. Mon entreprise vaut plus parce qu'elle ne dépend plus de moi.",
                 author: 'Jean-François P.',
-                role: 'Agroalimentaire',
+                role: 'PMI agroalimentaire — 60 salariés',
               },
             ].map((t, i) => (
               <Reveal key={i} delay={i * 100}>
-                <div className="bg-[#151518] p-8 rounded-2xl border border-white/10 shadow-md relative hover:bg-[#1A1A1E] transition-colors">
-                  <div className="text-5xl text-[#7667FF] absolute top-4 left-4 opacity-20 font-serif">&ldquo;</div>
-                  <p className="text-lg text-gray-300 italic mb-8 relative z-10 leading-relaxed pt-2">{t.text}</p>
+                <div className="bg-[#141518] p-8 rounded-2xl border border-[#2E3138] shadow-md relative hover:bg-[#1A1B1E] transition-colors">
+                  <div className="text-5xl text-[#7568FF] absolute top-4 left-4 opacity-20 font-serif">&ldquo;</div>
+                  <p className="text-lg text-[#8A8F98] italic mb-8 relative z-10 leading-relaxed pt-2">{t.text}</p>
                   <div>
                     <p className="text-white font-bold">{t.author}</p>
-                    <p className="text-gray-500 text-sm uppercase tracking-wide">{t.role}</p>
+                    <p className="text-[#8A8F98] text-sm">{t.role}</p>
                   </div>
                 </div>
               </Reveal>
@@ -464,37 +478,38 @@ export default function App() {
       </section>
 
       {/* --- L'Offre --- */}
-      <section id="offre" className="py-32 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0F0F11] to-black z-0" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#7667FF] rounded-full mix-blend-screen blur-[150px] opacity-10 animate-pulse z-0" />
+      <section id="offre" className="py-32 px-6 relative overflow-hidden border-t border-[#2E3138]">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0C0E] to-black z-0" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#7568FF] rounded-full mix-blend-screen blur-[150px] opacity-10 animate-pulse z-0" />
 
         <div className="max-w-3xl mx-auto text-center relative z-10">
           <Reveal>
-            <div className="bg-[#151518] border border-white/10 rounded-3xl p-8 md:p-16 shadow-2xl relative overflow-hidden group hover:border-[#7667FF]/30 transition-colors duration-500">
+            <div className="bg-[#141518] border border-[#2E3138] rounded-3xl p-8 md:p-16 shadow-2xl relative overflow-hidden group hover:border-[#7568FF]/30 transition-colors duration-500">
               <div className="absolute top-0 right-0 bg-[#FF6B6B] text-white text-xs font-bold px-4 py-2 uppercase tracking-widest rounded-bl-xl shadow-lg">
                 Personnalisable
               </div>
 
+              <span className="text-[#7568FF] font-mono text-[11px] uppercase tracking-wider mb-4 block">/// Programme</span>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Autonomie &amp; Sécurité</h2>
-              <p className="text-gray-400 mb-10">Accompagnement opérationnel sur 3 mois</p>
+              <p className="text-[#8A8F98] mb-10">Accompagnement opérationnel sur 3 mois<br />Pour dirigeants de PME &amp; PMI (10–90 salariés)</p>
 
               <div className="flex items-baseline justify-center gap-2 mb-10">
                 <span className="text-5xl md:text-6xl font-bold text-white tracking-tight">2 800€</span>
-                <span className="text-xl text-gray-500">HT / mois</span>
+                <span className="text-xl text-[#8A8F98]">HT / mois</span>
               </div>
 
               <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent mb-10" />
 
               <ul className="text-left space-y-5 mb-12 max-w-md mx-auto">
                 {[
-                  'Audit initial & Cartographie des risques',
+                  'Immersion terrain & cartographie des risques',
                   "Planification séquencée des 'disparitions'",
                   'Coaching dirigeant pendant les phases OFF',
                   'Restructuration des processus & délégations',
-                  'Disponibilité WhatsApp/Tel illimitée',
+                  'Disponibilité directe illimitée',
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-4 text-gray-300">
-                    <CheckCircle className="w-5 h-5 shrink-0 mt-0.5 text-[#7667FF]" />
+                  <li key={i} className="flex items-start gap-4 text-[#8A8F98]">
+                    <CheckCircle className="w-5 h-5 shrink-0 mt-0.5 text-[#7568FF]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -502,14 +517,17 @@ export default function App() {
 
               <button
                 onClick={openBooking}
-                className="w-full md:w-auto px-12 py-5 bg-[#7667FF] text-white font-bold text-lg rounded-xl shadow-[0_4px_20px_rgba(118,103,255,0.3)] hover:bg-[#6557d8] hover:shadow-[0_4px_30px_rgba(118,103,255,0.5)] hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+                className="w-full md:w-auto px-12 py-5 bg-[#7568FF] text-white font-bold text-lg rounded-xl shadow-[0_4px_20px_rgba(117,104,255,0.3)] hover:bg-[#6457E5] hover:shadow-[0_4px_30px_rgba(117,104,255,0.5)] hover:-translate-y-1 transition-all duration-300 cursor-pointer"
               >
-                Démarrer la discussion
+                Prendre 45 min
               </button>
 
-              <p className="text-xs text-gray-500 mt-8 leading-relaxed max-w-sm mx-auto">
+              <p className="text-xs text-[#8A8F98] mt-8 leading-relaxed max-w-sm mx-auto">
                 Tarif indicatif basé sur ~2j d&apos;implication/mois.
                 <br /> Le rythme s&apos;adapte à la maturité de vos équipes.
+              </p>
+              <p className="text-[13px] text-[#8A8F98] mt-6">
+                Pas sûr(e) ? Pas grave. On parle, on voit si ça colle.
               </p>
             </div>
           </Reveal>
@@ -517,20 +535,23 @@ export default function App() {
       </section>
 
       {/* --- Footer --- */}
-      <footer className="py-12 px-6 border-t border-white/5 text-center md:text-left bg-[#0F0F11] relative z-10">
+      <footer className="py-12 px-6 border-t border-[#2E3138] text-center md:text-left bg-[#0B0C0E] relative z-10">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
             <div className="text-xl font-bold text-white mb-2">
-              LIUT<span style={{ color: colors.primary }}>.ME</span>
+              Liut<span style={{ color: colors.primary }}>.</span>
             </div>
-            <p className="text-gray-500 text-sm">Accompagnement stratégique pour dirigeants industriels.</p>
+            <p className="text-[#8A8F98] text-sm">Associé opérationnel & stratégique pour dirigeants.</p>
           </div>
           <div className="flex gap-8">
-            <a href="https://www.linkedin.com/in/liut/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-              LinkedIn
+            <a href="https://liut.me/" target="_blank" rel="noopener noreferrer" className="text-[#8A8F98] hover:text-white transition-colors text-sm">
+              liut.me
             </a>
-            <a href="https://liut.me/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-              Contact
+            <a href="https://offres.liut.me/" target="_blank" rel="noopener noreferrer" className="text-[#8A8F98] hover:text-white transition-colors text-sm">
+              Toutes les offres
+            </a>
+            <a href="https://www.linkedin.com/in/liut/" target="_blank" rel="noopener noreferrer" className="text-[#8A8F98] hover:text-white transition-colors text-sm">
+              LinkedIn
             </a>
           </div>
         </div>

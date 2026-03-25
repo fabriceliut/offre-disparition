@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 body {
-  background-color: #0F0F11;
+  background-color: #0B0C0E;
   overflow-x: hidden;
   margin: 0;
 }
@@ -10,16 +10,16 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0F0F11;
+  background: #0B0C0E;
 }
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: #2E3138;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #7667FF;
+  background: #3E4149;
 }
 ::selection {
-  background-color: #7667FF;
+  background-color: #7568FF;
   color: white;
 }
